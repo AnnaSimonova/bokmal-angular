@@ -1,0 +1,13 @@
+<div class="article_item">
+  <a href="#" class="art_section">{{ article.art_section }}</a>
+  <a href="#">
+    <div class="pic_wrapper" [ngStyle]="{backgroundImage: 'url('+ article.image_url +')', backgroundSize: 'cover'}">
+      <a href="#"><img src="assets/images/bookmark_yel.svg" class="to_favs" style="width: 20px" alt=""></a>
+    </div>
+  </a>
+  <div class="date-views">
+    <span *ngIf="article.date" class="date">{{ article.date | date}}</span>
+    <span *ngIf="article.views" class="views">{{ article.views }}</span>
+  </div>
+  <a href="#" class="other_title">{{ article.name }}</a>
+</div>
