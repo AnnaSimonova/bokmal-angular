@@ -9,15 +9,12 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
 
   get(art_section) {
-    console.log(art_section);
     let getOptions = {
       params: { art_section }
     };
-    console.log(this.http);
     return this.http.get<ArticlesResponse>('articles', getOptions)
         .pipe(
             map((response: ArticlesResponse) => {
-              console.log(response.articles);
               return response.articles;
             })
         );

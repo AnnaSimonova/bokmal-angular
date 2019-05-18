@@ -116,11 +116,14 @@ main {
 }
 
 #side_menu {
-    width: 59px;
+    position: absolute;
+    z-index: 15;
+    width: 510px;
+    height: 100%;
 }
 
 .burger_menu {
-    width: 100%;
+    width: 59px;
     height: 100%;
     background-color: white;
     border-right: solid thin #EBECF0;
@@ -157,30 +160,33 @@ main {
     transform: rotate(-45deg) translate(0, -1px);
 }
 
-nav {
+app-menu {
     position: absolute;
     top: 0;
+    width: 450px;
+    height: 100%;
     left: 60px;
-    width: 95.7%;
+    border-right: solid thin #EBECF0;
+    background-color: white;
+}
+
+nav {
     height: 100%;
 }
+
 nav ul {
-    width: 36%;
+    width: 320px;
     height: 100%;
     display: inline-block;
     margin: 0;
     float: left;
     position: relative;
+    margin-left: 20%;
     z-index: 3;
-    border-right: solid thin #EBECF0;
     background-color: white;
     list-style-type: none;
-    -webkit-transition: transform 0.3s;
-    -moz-transition: transform 0.3s;
-    transition: transform 0.3s;
 }
 nav ul li {
-    padding-left: 25%;
     line-height: 2.5;
     font-size: 18px;
     font-weight: 900;
@@ -205,9 +211,9 @@ nav ul li:first-child {
     visibility: visible;
 }
 
-.menu_items_hidden {
-    transform: translate(-600px, 0);
-}
+/*.menu_items_hidden {*/
+    /*transform: translate(-600px, 0);*/
+/*}*/
 
 .blurred {
     width: 100%;
