@@ -1,1 +1,11 @@
+<section id="side_menu">
+<div (click)="toggleMenu()" class="burger_menu">
+    <span [@burgerFirstLine]="burgerState"></span>
+    <span [@burgerOddLine]="burgerState"></span>
+    <span [@burgerThirdLine]="burgerState"></span>
+    <span [@burgerOddLine]="burgerState"></span>
+</div>
+<app-menu [@slideInOut]="menuState" (mouseleave)="toggleMenu()"></app-menu>
+</section>
 <router-outlet></router-outlet>
+
