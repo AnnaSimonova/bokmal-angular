@@ -27,6 +27,7 @@ interface ArticlesResponse {
 
 interface article {
   art_section: string;
+  section_eng: string;
   image_url: string;
   date: number;
   views: number;

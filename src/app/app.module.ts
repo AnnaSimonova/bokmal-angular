@@ -10,7 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ArticleService } from "./article.service";
 import { MockXHRBackend } from './mock-xhr-backend';
 import { MenuComponent } from './menu/menu.component';
-import { SectionListComponent } from './section-list/section-list.component';
+import { HeaderComponent } from './header/header.component';
+import { SortPipe } from './sort.pipe';
+import { SortParametersComponent } from './sort-parameters/sort-parameters.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { SectionListComponent } from './section-list/section-list.component';
     ArticleComponent,
     ArticleListComponent,
     MenuComponent,
-    SectionListComponent
+    HeaderComponent,
+    SortPipe,
+    SortParametersComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,8 @@ import { SectionListComponent } from './section-list/section-list.component';
   ],
   providers: [
     ArticleService,
+      ArticleListComponent,
+      SortParametersComponent,
     { provide: HttpXhrBackend, useClass: MockXHRBackend }
   ],
   bootstrap: [AppComponent]

@@ -1,1 +1,4 @@
-<app-section-list></app-section-list>
+<ul class="menu_items">
+        <li *ngFor="let section of sections" routerLinkActive="active_section" [routerLinkActiveOptions]="{exact:
+true}"><a routerLink="{{ section.link }}" (click)="onMenuToggle()">{{ section.name }}</a></li>
+</ul>

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <section id="side_menu">
 <div (click)="toggleMenu()" class="burger_menu">
     <span [@burgerFirstLine]="burgerState"></span>
@@ -5,7 +6,9 @@
     <span [@burgerThirdLine]="burgerState"></span>
     <span [@burgerOddLine]="burgerState"></span>
 </div>
-<app-menu [@slideInOut]="menuState" (mouseleave)="toggleMenu()"></app-menu>
+<app-menu [@slideInOut]="menuState"></app-menu>
 </section>
+<app-sort-parameters></app-sort-parameters>
 <router-outlet></router-outlet>
+<app-footer></app-footer>
 

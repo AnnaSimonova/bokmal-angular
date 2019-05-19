@@ -1,4 +1,4 @@
 <app-article
-        *ngFor="let article of articles"
+        *ngFor="let article of (articles | sort: sort_by)"
         [article]="article">
 </app-article>

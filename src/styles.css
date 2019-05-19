@@ -30,9 +30,16 @@ body {
     font-size: 14px;
     color: #2B292D;
     flex-flow: column;
+    position: relative;
 }
 
-header {
+app-root {
+    /*position:relative;*/
+    /*overflow:hidden;*/
+    /*height: 100%;*/
+}
+
+app-header {
     display: flex;
     justify-content: space-between;
     height: 48px;
@@ -41,12 +48,13 @@ header {
     font-family: "Proxima Nova SBold", sans-serif;
     letter-spacing: 1px;
     text-align: center;
+    position: sticky;
 }
-header div {
+app-header div {
     flex-basis: 70%;
     display: flex;
 }
-header div a:last-child {
+app-header div a:last-child {
     flex-basis: 10%;
     text-align: left;
     padding: 5px 0 5px 12px;
@@ -55,7 +63,7 @@ header div a:last-child {
     border-radius: 15px;
     min-width: 100px;
 }
-header div a:last-child::after {
+app-header div a:last-child::after {
     background-image: url("assets/images/arrow-down.svg");
     background-size: 10px 20px;
     display: inline-block;
@@ -113,6 +121,7 @@ a {
 main {
     display: flex;
     position: relative;
+    height: 100%;
 }
 
 #side_menu {
@@ -171,10 +180,15 @@ app-menu {
 }
 
 nav {
+    position: absolute;
+    top: 0;
+    width: 450px;
     height: 100%;
+    border-right: solid thin #EBECF0;
+    background-color: white;
 }
 
-nav ul {
+app-menu ul {
     width: 320px;
     height: 100%;
     display: inline-block;
@@ -186,12 +200,12 @@ nav ul {
     background-color: white;
     list-style-type: none;
 }
-nav ul li {
+app-menu ul li {
     line-height: 2.5;
     font-size: 18px;
     font-weight: 900;
 }
-nav ul li:first-child {
+app-menu ul li:first-child {
     padding-top: 45%;
 }
 
@@ -210,10 +224,6 @@ nav ul li:first-child {
 .menu_items li:hover::before {
     visibility: visible;
 }
-
-/*.menu_items_hidden {*/
-    /*transform: translate(-600px, 0);*/
-/*}*/
 
 .blurred {
     width: 100%;
@@ -251,6 +261,14 @@ nav ul li:first-child {
 
 .art_section {
     color: #EEB20B;
+}
+
+.active_section {
+    color: #EEB20B;
+}
+
+.active_section::before {
+    visibility: visible!important;
 }
 
 .main_title, .author_column .primary_description .primary_details .title, .primary_description .primary_details .title {
@@ -301,7 +319,9 @@ nav ul li:first-child {
 }
 
 .sort_field {
-    margin: 3%;
+    position: relative;
+    left: 75%;
+    margin-top: 2%;
 }
 .sort_field span {
     cursor: pointer;
@@ -379,9 +399,9 @@ nav ul li:first-child {
 }
 
 .other_articles, app-article-list {
-    margin: 5%;
+    margin: 3% 3% 3% 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: relative;
     flex-wrap: wrap;
 }
@@ -391,6 +411,7 @@ nav ul li:first-child {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-bottom: 15%;
 }
 .article_item .pic_wrapper {
     margin-top: 1em;

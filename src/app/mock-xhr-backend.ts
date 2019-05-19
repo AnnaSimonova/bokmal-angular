@@ -26,16 +26,6 @@ export class MockXHRBackend implements HttpBackend {
               status: 200
             };
           }
-          // else {
-          //   let articles;
-          //   let id = parseInt(request.url.split('/')[1]);
-          //   articles = this._articles.filter(article => article.id === id);
-          //   responseOptions = {
-          //     body: JSON.parse(JSON.stringify(articles[0])),
-          //     status: 200
-          //   };
-          // }
-          // break;
       }
 
       const responseObject = new HttpResponse(responseOptions);
@@ -49,43 +39,49 @@ export class MockXHRBackend implements HttpBackend {
   _articles = [
     {
       art_section: "RECOMMENDED",
+      section_ukr: "КОРИСНІ СТАТТІ",
       image_url: "assets/images/article6.PNG",
-      date: 1506891268,
+      date: 1506891268000,
       views: 980,
       name: "Найкращі дитячі ілюстратори незалежної України"
     },
     {
       art_section: "AFISHA",
+      section_ukr: "НОВИНИ",
       image_url: "assets/images/article7.PNG",
-      date: 1506042000,
+      date: 1506042000000,
       views: 145,
       name: "Вихідні з дітьми 9-10 вересня"
     },
     {
       art_section: "LITCLUB",
+      section_ukr: "ЛІТКЛУБ",
       image_url: "assets/images/article8.PNG",
-      date: 1506560400,
+      date: 1506560400000,
       views: 2045,
       name: "Літклуб Букмоль: розклад на квітень"
     },
     {
       art_section: "RECOMMENDED",
+      section_ukr: "КОРИСНІ СТАТТІ",
       image_url: "assets/images/article1.PNG",
-      date: 1506891268,
+      date: 1506891268000,
       views: 980,
       name: "Найкращі дитячі ілюстратори незалежної України"
     },
     {
       art_section: "AFISHA",
+      section_ukr: "НОВИНИ",
       image_url: "assets/images/article11.PNG",
-      date: 1506042000,
+      date: 1525132800000,
       views: 145,
       name: "Вихідні з дітьми 9-10 вересня"
     },
     {
       art_section: "LITCLUB",
+      section_ukr: "ЛІТКЛУБ",
       image_url: "assets/images/article3.PNG",
-      date: 1506560400,
+      date: 1558271133000,
       views: 2045,
       name: "Літклуб Букмоль: розклад на квітень"
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ArticleService } from '../article.service';
+import { SortPipe } from "../sort.pipe";
 
 @Component({
   selector: 'app-article-list',
@@ -11,7 +12,7 @@ export class ArticleListComponent implements OnInit {
 
   constructor(
       private articleService: ArticleService,
-      private activatedRoute: ActivatedRoute
+      private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
