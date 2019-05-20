@@ -1,4 +1,7 @@
-<app-article
-        *ngFor="let article of (articles | sort: 'views')"
-        [article]="article">
-</app-article>
+<app-sort-parameters></app-sort-parameters>
+<div class="art_list">
+    <app-article
+            *ngFor="let article of (articles | sort: sortParam)"
+            [article]="article">
+    </app-article>
+</div>

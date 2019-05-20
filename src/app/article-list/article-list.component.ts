@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ArticleService } from '../article.service';
 import { SortPipe } from "../sort.pipe";
+import { SortParametersComponent } from "../sort-parameters/sort-parameters.component";
 
 @Component({
   selector: 'app-article-list',
@@ -13,7 +14,9 @@ export class ArticleListComponent implements OnInit {
   constructor(
       private articleService: ArticleService,
       private activatedRoute: ActivatedRoute,
+      private sortBy: SortParametersComponent
   ) { }
+    sortParam = this.sortBy.activeTab;
 
   ngOnInit() {
     this.activatedRoute.params
@@ -23,7 +26,7 @@ export class ArticleListComponent implements OnInit {
             art_section = '';
           }
           this.getArticles(art_section.toUpperCase());
-        })
+        });
   }
 
   art_section = '';
@@ -34,5 +37,6 @@ export class ArticleListComponent implements OnInit {
         .subscribe(articles => {
           this.articles = articles;
         });
+    console.log(this.sortParam);
   }
 }

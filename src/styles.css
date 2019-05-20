@@ -398,7 +398,7 @@ app-menu ul li:first-child {
     right: 15px;
 }
 
-.other_articles, app-article-list {
+.other_articles, .art_list {
     margin: 3% 3% 3% 5%;
     display: flex;
     justify-content: space-around;

@@ -1,3 +1,4 @@
-<p class="sort_field" (click)="toggleParameters($event)">Сортувати за:
-  <span class="sort_active">Популярністю</span> |
-  <span>Новизною</span></p>
+<p class="sort_field">Сортувати за:
+  <span [ngClass]="{ 'sort_active':activeTab==='views'}" (click)="views('views')">Популярністю</span> |
+  <span [ngClass]="{ 'sort_active':activeTab==='date'}" (click)="date('date')">Новизною</span>
+</p>
