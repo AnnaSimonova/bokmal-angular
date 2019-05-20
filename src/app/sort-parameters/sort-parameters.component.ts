@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleListComponent } from "../article-list/article-list.component";
 
 @Component({
   selector: 'app-sort-parameters',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SortParametersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private articlesList: ArticleListComponent) { }
 
   // sort_parameters = [
   //   {
@@ -29,9 +30,11 @@ export class SortParametersComponent implements OnInit {
 
   views(activeTab){
     this.activeTab = activeTab;
+    this.articlesList.updateList(this.activeTab);
   }
 
   date(activeTab){
     this.activeTab = activeTab;
+    this.articlesList.updateList(this.activeTab);
   }
 }

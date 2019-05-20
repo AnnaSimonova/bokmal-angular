@@ -50,7 +50,7 @@ export class MockXHRBackend implements HttpBackend {
       section_ukr: "НОВИНИ",
       image_url: "assets/images/article7.PNG",
       date: 1506042000000,
-      views: 145,
+      views: 396,
       name: "Вихідні з дітьми 9-10 вересня"
     },
     {
@@ -66,7 +66,7 @@ export class MockXHRBackend implements HttpBackend {
       section_ukr: "КОРИСНІ СТАТТІ",
       image_url: "assets/images/article1.PNG",
       date: 1506891268000,
-      views: 980,
+      views: 1111,
       name: "Найкращі дитячі ілюстратори незалежної України"
     },
     {
@@ -74,7 +74,7 @@ export class MockXHRBackend implements HttpBackend {
       section_ukr: "НОВИНИ",
       image_url: "assets/images/article11.PNG",
       date: 1525132800000,
-      views: 145,
+      views: 301,
       name: "Вихідні з дітьми 9-10 вересня"
     },
     {
@@ -82,7 +82,7 @@ export class MockXHRBackend implements HttpBackend {
       section_ukr: "ЛІТКЛУБ",
       image_url: "assets/images/article3.PNG",
       date: 1558271133000,
-      views: 2045,
+      views: 1999,
       name: "Літклуб Букмоль: розклад на квітень"
     }
   ];
