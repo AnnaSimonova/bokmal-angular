@@ -2,6 +2,8 @@ import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ArticleService } from '../article.service';
 import { SortPipe } from "../sort.pipe";
+import { FormsModule } from "@angular/forms";
+import {query} from "@angular/animations";
 
 @Component({
   selector: 'app-article-list',

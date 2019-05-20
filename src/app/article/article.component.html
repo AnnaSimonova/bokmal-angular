@@ -9,5 +9,5 @@
     <span *ngIf="article.date" class="date">{{ article.date | date }}</span>
     <span *ngIf="article.views" class="views">{{ article.views }}</span>
   </div>
-  <a href="#" class="other_title">{{ article.name }}</a>
+  <a href="#" [innerHTML]="article.name | highlightSearch : query" class="other_title"></a>
 </div>

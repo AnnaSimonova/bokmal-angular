@@ -1,7 +1,9 @@
+<input [(ngModel)]="query" class="search-input" placeholder="Search">
 <app-sort-parameters></app-sort-parameters>
 <div class="art_list">
     <app-article
-            *ngFor="let article of (articles | sort: sortParam)"
-            [article]="article">
+            *ngFor="let article of (articles | sort: sortParam | search: query ? query : '' )"
+            [article]="article"
+            [query]="query">
     </app-article>
 </div>

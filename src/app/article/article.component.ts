@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HighlightSearchPipe } from "../highlight-search.pipe";
 
 @Component({
   selector: 'app-article',
@@ -7,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
   @Input() article;
+  @Input() query;
 
   constructor() { }
 

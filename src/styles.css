@@ -225,6 +225,12 @@ app-menu ul li:first-child {
     visibility: visible;
 }
 
+.search-input {
+    position: relative;
+    left: 80%;
+    outline: none;
+}
+
 .blurred {
     width: 100%;
     height: 100%;

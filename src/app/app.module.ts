@@ -14,6 +14,9 @@ import { HeaderComponent } from './header/header.component';
 import { SortPipe } from './sort.pipe';
 import { SortParametersComponent } from './sort-parameters/sort-parameters.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchPipe } from './search.pipe';
+import { FormsModule } from "@angular/forms";
+import { HighlightSearchPipe } from './highlight-search.pipe';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { FooterComponent } from './footer/footer.component';
     SortPipe,
     SortParametersComponent,
     FooterComponent,
+    SearchPipe,
+    HighlightSearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      FormsModule
   ],
   providers: [
     ArticleService,
