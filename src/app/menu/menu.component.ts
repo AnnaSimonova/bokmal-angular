@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from "../app.component";
+import { AppComponent } from "../app/app.component";
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +9,7 @@ export class MenuComponent implements OnInit {
   constructor(private app: AppComponent) {
   }
 
-  onMenuToggle() {
+  onMenuToggle(): void {
     this.app.toggleMenu();
   }
 

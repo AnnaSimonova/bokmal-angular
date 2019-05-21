@@ -1,9 +1,7 @@
-import {Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { ArticleService } from '../article.service';
-import { SortPipe } from "../sort.pipe";
-import { FormsModule } from "@angular/forms";
-import {query} from "@angular/animations";
+import { ArticleService } from '../services/article.service';
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-article-list',
@@ -11,36 +9,37 @@ import {query} from "@angular/animations";
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
+    art_section: string = '';
+    articles: object = [];
+    sortParam: string = "views";
+    query: string;
 
-  constructor(
-      private articleService: ArticleService,
-      private activatedRoute: ActivatedRoute,
-  ) { }
-    sortParam = "views";
+    constructor(
+        private articleService: ArticleService,
+        private activatedRoute: ActivatedRoute,
+    ) { }
 
-    updateList(sortBy) {
+    updateList(sortBy: string): void {
       this.sortParam = sortBy;
       this.ngOnInit();
     }
 
-  ngOnInit() {
-    this.activatedRoute.params
-        .subscribe(params => {
-          let art_section = params['art_section'];
-          if(art_section.toLowerCase() === 'all') {
-            art_section = '';
-          }
-          this.getArticles(art_section.toUpperCase());
-        });
-  }
+    ngOnInit(): void {
+        this.activatedRoute.params
+            .subscribe(params => {
+                let art_section = params['art_section'];
+                if(art_section.toLowerCase() === 'all') {
+                    art_section = '';
+                }
+                this.getArticles(art_section.toUpperCase());
+            });
+    }
 
-  art_section = '';
-  articles = [];
-  getArticles(art_section) {
-    this.art_section = art_section;
-    this.articleService.get(art_section)
-        .subscribe(articles => {
-          this.articles = articles;
-        });
-  }
+    getArticles(art_section: string): void {
+        this.art_section = art_section;
+        this.articleService.get(art_section)
+            .subscribe(articles => {
+                this.articles = articles;
+            });
+    }
 }

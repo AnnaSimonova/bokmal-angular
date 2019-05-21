@@ -48,7 +48,7 @@ import { trigger, state, style, transition, animate} from '@angular/animations';
   ]
 })
 export class AppComponent {
-  menuState:string = 'in';
+  menuState: string = 'in';
   burgerState: string = 'close';
 
   toggleMenu() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  form: FormGroup;
 
-  constructor() { }
+  constructor(
+      private formBuilder: FormBuilder,
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: this.formBuilder.control('', Validators.compose([
+        Validators.required,
+        Validators.email
+      ])),
+    });
   }
 
+  onSubmit(value): void {
+    console.log("Submitted");
+  }
 }

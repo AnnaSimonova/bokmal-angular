@@ -1,17 +1,20 @@
 <footer>
   <div class="subscribe">
     <p>Підписуйтесь на новини від Bokmal</p>
-    <form>
-      <input type="email" name="email" placeholder="E-Mail">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <input type="email" name="email" placeholder="E-mail" id="email" formControlName="email">
+      <div *ngIf="form.get('email').errors" class="error">
+        Please enter your valid email
+      </div>
       <input type="submit">
     </form>
   </div>
   <div class="social">
     <p>Ми у соціальних мережах</p>
     <div class="social_images">
-      <img src="assets/images/facebook.svg">
-      <img src="assets/images/twitter.svg">
-      <img src="assets/images/instagram.svg">
+      <img src="assets/images/facebook.svg" alt="">
+      <img src="assets/images/twitter.svg" alt="">
+      <img src="assets/images/instagram.svg" alt="">
     </div>
   </div>
   <div class="copyright">
