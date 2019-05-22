@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpXhrBackend } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Observable } from "rxjs";
 
 import { AppComponent } from './app/app.component';
 import { ArticleComponent } from './article/article.component';
@@ -37,7 +38,8 @@ import { HighlightSearchPipe } from './pipes/highlight-search.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Observable
   ],
   providers: [
     ArticleService,

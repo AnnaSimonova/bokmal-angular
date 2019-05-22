@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ArticleService } from '../services/article.service';
-import { FormBuilder } from "@angular/forms";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-article-list',
@@ -13,6 +13,9 @@ export class ArticleListComponent implements OnInit {
     articles: object = [];
     sortParam: string = "views";
     query: string;
+    art_sections_subscr: Subscription;
+    articles_list_subscr: Subscription;
+
 
     constructor(
         private articleService: ArticleService,
@@ -24,8 +27,8 @@ export class ArticleListComponent implements OnInit {
       this.ngOnInit();
     }
 
-    ngOnInit(): void {
-        this.activatedRoute.params
+    ngOnInit() {
+        this.art_sections_subscr = this.activatedRoute.params
             .subscribe(params => {
                 let art_section = params['art_section'];
                 if(art_section.toLowerCase() === 'all') {
@@ -35,11 +38,16 @@ export class ArticleListComponent implements OnInit {
             });
     }
 
-    getArticles(art_section: string): void {
+    getArticles(art_section: string) {
         this.art_section = art_section;
-        this.articleService.get(art_section)
+        this.articles_list_subscr = this.articleService.get(art_section)
             .subscribe(articles => {
                 this.articles = articles;
             });
+    }
+
+    ngOnDestroy() {
+        this.art_sections_subscr.unsubscribe();
+        this.articles_list_subscr.unsubscribe();
     }
 }
