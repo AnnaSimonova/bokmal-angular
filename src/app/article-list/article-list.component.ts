@@ -1,7 +1,7 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ArticleService } from '../services/article.service';
-import {Observable, Subscription} from "rxjs";
+import { Subscription} from "rxjs";
 
 @Component({
   selector: 'app-article-list',
@@ -27,7 +27,7 @@ export class ArticleListComponent implements OnInit {
       this.ngOnInit();
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.art_sections_subscr = this.activatedRoute.params
             .subscribe(params => {
                 let art_section = params['art_section'];
@@ -38,7 +38,7 @@ export class ArticleListComponent implements OnInit {
             });
     }
 
-    getArticles(art_section: string) {
+    getArticles(art_section: string): void {
         this.art_section = art_section;
         this.articles_list_subscr = this.articleService.get(art_section)
             .subscribe(articles => {
@@ -46,7 +46,7 @@ export class ArticleListComponent implements OnInit {
             });
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.art_sections_subscr.unsubscribe();
         this.articles_list_subscr.unsubscribe();
     }

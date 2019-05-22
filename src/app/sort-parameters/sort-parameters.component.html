@@ -1,4 +1,4 @@
 <p class="sort_field">Сортувати за:
-  <span [ngClass]="{ 'sort_active':activeTab==='views'}" (click)="views('views')">Популярністю</span> |
-  <span [ngClass]="{ 'sort_active':activeTab==='date'}" (click)="date('date')">Новизною</span> |
+  <span [ngClass]="{ 'sort_active':activeTab==='views'}" (click)="views('views')" [innerHTML]="'&nbsp&nbspПопулярністю&nbsp&nbsp'"></span> |
+  <span [ngClass]="{ 'sort_active':activeTab==='date'}" (click)="date('date')" [innerHTML]="'&nbsp&nbspНовизною&nbsp&nbsp'"></span>
 </p>

@@ -227,8 +227,14 @@ app-menu ul li:first-child {
 
 .search-input {
     position: relative;
-    left: 80%;
+    left: 79%;
+    margin-top: 2%;
     outline: none;
+    height: 2em;
+    width: 200px;
+    box-shadow: 2px 2px #FFC380;
+    padding-left: 5px;
+    font-size: 12px;
 }
 
 .blurred {
@@ -326,9 +332,11 @@ app-menu ul li:first-child {
 
 .sort_field {
     position: relative;
-    left: 75%;
+    left: 72%;
     margin-top: 2%;
+    font-size: 15px;
 }
+
 .sort_field span {
     cursor: pointer;
 }
@@ -551,8 +559,8 @@ footer {
     justify-content: space-around;
     padding: 30px 0 50px 0;
     position: relative;
-    width: 100%;
     bottom: 0;
+    width: 100%;
 }
 
 .subscribe {
