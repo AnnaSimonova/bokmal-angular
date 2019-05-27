@@ -23,6 +23,6 @@ export class FooterComponent implements OnInit {
   }
 
   onSubmit(value): void {
-    console.log("Submitted");
+    alert("Email submitted");
   }
 }

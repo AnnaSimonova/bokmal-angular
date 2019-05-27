@@ -84,6 +84,30 @@ export class MockXHRBackend implements HttpBackend {
       date: 1558271133000,
       views: 1999,
       name: "Літклуб Букмоль: розклад на квітень"
+    },
+    {
+      art_section: "REVIEWS",
+      section_ukr: "ОГЛЯДИ",
+      image_url: "assets/images/story.png",
+      date: 1558275111111,
+      views: 45,
+      name: "Шість пригодницьких історій для літнього читання"
+    },
+    {
+      art_section: "ADVICE",
+      section_ukr: "ПОРАДИ",
+      image_url: "assets/images/section_advice.png",
+      date: 1558279133000,
+      views: 2045,
+      name: "\"Любий щоденнику...\": ваш настільний психоаналітик"
+    },
+    {
+      art_section: "AUTHOR",
+      section_ukr: "АВТОРСЬКА КОЛОНКА",
+      image_url: "assets/images/author.png",
+      date: 1558275678000,
+      views: 3025,
+      name: "Бути собою разом із Туве Янссон: 5 диваків долини мумі-троллів"
     }
   ];
 }

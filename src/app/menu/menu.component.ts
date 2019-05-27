@@ -13,21 +13,17 @@ export class MenuComponent implements OnInit {
     this.app.toggleMenu();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  sections = [
+  sections: object = [
     {
       name: "ГОЛОВНА",
       link: "/all"
     },
     {
-      name: "ТОП",
-      // link: "/all"
-    },
-    {
       name: "ОГЛЯДИ",
-      // link: "/all"
+      link: "/reviews"
     },
     {
       name: "КОРИСНІ СТАТТІ",
@@ -39,11 +35,11 @@ export class MenuComponent implements OnInit {
     },
     {
       name: "АВТОРСЬКА КОЛОНКА",
-      // link: "/"
+      link: "/author"
     },
     {
-      name: "ІНТЕРАКТИВ",
-      // link: "/"
+      name: "ПОРАДИ",
+      link: "/advice"
     },
     {
       name: "ЛІТКЛУБ",
