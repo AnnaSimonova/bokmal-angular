@@ -1,8 +1,9 @@
 import {Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Route} from "@angular/router";
 import { ArticleService } from '../services/article.service';
 import {Observable, Subscription } from "rxjs";
 import { map, switchMap} from 'rxjs/operators';
+import { Article } from "../article/article";
 
 @Component({
     selector: 'app-article-list',
@@ -11,12 +12,11 @@ import { map, switchMap} from 'rxjs/operators';
 })
 export class ArticleListComponent implements OnInit {
     artSection: string = '';
-    articles: object = [];
+    articles: Article[];
     sortParam: string = "views";
     query: string;
-    sectionSubscription: Observable<object>;
-    articleSubscription: Observable<object>;
-
+    sectionSubscription: Observable<Route>;
+    articleSubscription: Observable<Article[]>;
 
     constructor(
         private articleService: ArticleService,
@@ -27,7 +27,7 @@ export class ArticleListComponent implements OnInit {
         this.getArticlesList();
     }
 
-    getArticlesList() {
+    getArticlesList(): void {
         this.sectionSubscription = this.activatedRoute.params;
         this.articleSubscription = this.sectionSubscription.pipe(
             map(params => {
